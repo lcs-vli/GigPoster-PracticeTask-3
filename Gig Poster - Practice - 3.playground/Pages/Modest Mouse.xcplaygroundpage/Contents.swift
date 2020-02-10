@@ -30,9 +30,53 @@ let lightGrey = Color(hue: 71, saturation: 5, brightness: 87, alpha: 100)
 let deepYellow = Color(hue: 46, saturation: 99, brightness: 99, alpha: 100)
 let black = Color(hue: 0, saturation: 100, brightness: 0, alpha: 100)
 
-// Begin your solution here...
+//grey block
+canvas.drawShapesWithBorders = false
+canvas.fillColor = lightGrey
+var paralleclVertices: [Point] = []
+paralleclVertices.append(Point(x: 0, y: 400))
+paralleclVertices.append(Point(x: 0, y: 70))
+paralleclVertices.append(Point(x: 370, y: 400))
+canvas.drawCustomShape(with: paralleclVertices)
 
+//yellow block
+canvas.fillColor = deepYellow
+var yellow: [Point] = []
+yellow.append(Point(x: 0, y: 65))
+yellow.append(Point(x: 0, y: 0))
+yellow.append(Point(x: 60, y: 0))
+yellow.append(Point(x: 400, y: 340))
+yellow.append(Point(x: 400, y: 400))
+yellow.append(Point(x: 340, y: 400))
+canvas.drawCustomShape(with: yellow)
 
+//black block
+canvas.fillColor = black
+var blackkk: [Point] = []
+blackkk.append(Point(x: 60, y: 0))
+blackkk.append(Point(x: 400, y: 0))
+blackkk.append(Point(x: 400, y: 330))
+canvas.drawCustomShape(with: blackkk)
+
+//grey lines
+canvas.lineColor = darkGrey
+
+for line in 1...18{
+    canvas.drawLine(from: Point(x:-410+43*line, y:0), to: Point(x:-10+43*line, y:400), lineWidth: 14)
+}
+
+//draw background grey above
+canvas.fillColor = darkGrey
+canvas.drawRectangle(at: Point(x:0, y:400), width: 400, height: 200)
+
+//text 
+canvas.drawText(message: "modest mouse", at: Point(x: 15, y: 405), size: 40)
+canvas.drawText(message: "at the speak intongues social hall", at: Point(x: 15, y: 575), size: 8)
+canvas.drawText(message: "4311 lorain ave. / cleveland, oh", at: Point(x: 15, y: 560), size: 8)
+canvas.drawText(message: "saturday / august 24 1996", at: Point(x: 160, y: 575), size: 8)
+canvas.drawText(message: "10 pm, all invited", at: Point(x: 160, y: 560), size: 8)
+canvas.drawText(message: "with old hearts club", at: Point(x: 320, y: 575), size: 8)
+canvas.drawText(message: "and milk", at: Point(x: 360, y: 560), size: 8)
 /*:
  ## Use Source Control
  
